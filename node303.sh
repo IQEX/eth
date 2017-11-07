@@ -3,6 +3,6 @@
 source base_node.sh
 
 NODE_ID="30303"
-DATA_DIR="/Users/ocsy/Workspaces/s5540liop/research/blockchain/nodes/node30303"
+DATA_DIR="run/nodes/node30303"
 
-startGethNodeWithRPCBackEnd $NODE_ID $DATA_DIR 1 22071983
+startGethNodeWithRPCBackEnd $NODE_ID $DATA_DIR 0x98fd28df5ac0d04349aed34b099b15d595b485dc run/password

@@ -1,5 +1,5 @@
-#!/bin/sh
+#!/bin/bash
 
 source base_node.sh
 
-initNode $1
+bootNode 
