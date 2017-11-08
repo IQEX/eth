@@ -1,8 +1,8 @@
-# Ошибки в смартконтрактах или Security Alert от Parity 
+# Новый Security Alert от Parity или чего стоят ошибки в смартконтрактах 
 
 ![Parity](paritytech-hero-lg.png)
 
-7 Ноября [Parity](https://paritytech.io) [объявила](https://paritytech.io/blog/security-alert.html) о критической ошибке в коде, отвечающим за работу их multi-sig кошелька в основе которого лежит общедоступный [смарт-котракт](https://github.com/paritytech/parity/blob/master/js/src/contracts/snippets/enhanced-wallet.sol). Это уже второй подобный случай, [первый](https://paritytech.io/blog/security-alert-high-2.html) произошел 19/07/2017 года, когда из-за найденной уязвимости смарт-контракта были выведены 150000 ETH ([Подробнее](https://habrahabr.ru/post/333754/)).
+7 Ноября [Parity](https://paritytech.io) [объявила](https://paritytech.io/blog/security-alert.html) о критической ошибке в коде, отвечающим за работу их multi-sig кошелька в основе которого лежит общедоступный [смарт-котракт](https://github.com/paritytech/parity/blob/v1.8.2/js/src/contracts/snippets/enhanced-wallet.sol). Это уже второй подобный случай, [первый](https://paritytech.io/blog/security-alert-high-2.html) произошел 19/07/2017 года, когда из-за найденной уязвимости смарт-контракта были выведены 150000 ETH ([Подробнее](https://habrahabr.ru/post/333754/)).
 
 В этот раз пользователь GitHub [devops199](https://github.com/devops199), экспериентируя с публичными методами общедоступных смарт-контрактов вызвал метод `kill` смарт-контракта Parity. Issue [#6995](https://github.com/paritytech/parity/issues/6995) на GitHub. В результате этого около 1 миллиона ETH (около $300 миллионов) стали "заморожены", то есть лишены возможности быть истрачены.
 
