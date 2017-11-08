@@ -21,9 +21,9 @@
   modifier only_uninitialized { if (m_numOwners > 0) throw; _; }
 ```
 
-Однако при размещении контракта список владельцев не был инициализован, и переменная `m_numOwners` был равна 0. Историю операций с контрактом можно посмотреть [здесь](https://etherscan.io/address/0x863df6bfa4469f3ead0be8f9f2aae51c91a907b4)
+Однако при размещении контракта список владельцев не был инициализован, и переменная `m_numOwners` была равна 0. Историю всех операций с контрактом можно посмотреть [здесь].(https://etherscan.io/address/0x863df6bfa4469f3ead0be8f9f2aae51c91a907b4)
 
-В результате вызов `initWallet` позволил `devops199` стать "владельцем" контракта и выполнить kill:
+В результате вызов `initWallet` позволил `devops199` стать владельцем контракта и выполнить `kill`:
 ```
   // kills the contract sending everything to `_to`.
   function kill(address _to) onlymanyowners(sha3(msg.data)) external {
