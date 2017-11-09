@@ -22,3 +22,4 @@
 
 * Перевод со счета на счет:
 `eth.sendTransaction({from:eth.coinbase, to: "0x3729277d8157a3acfbfbccb94f19873ec279c2d6", value: web3.toWei(1, "ether")})`
+

@@ -2,17 +2,17 @@
 
 GENESIS="PrivateGenesis.json"
 GETH_PATH="/usr/local/"
-BOOT_NODE="enode://28746f833f00d1ee0a75653892f8353e74eb9723978225622f459dd60f6b0cd7c1782028378810b7b6f2e8366ca4edb32389c74cdc94b539b1e1513ee1416831@127.0.0.1:30301"
+BOOT_NODE="enode://5a4b439c086e6259a265d75e01a1a06f941d0dc89d554d11a04598c22da6a4786278460076e688127f8dfb3a95fa782082da1fbc16cedb6b57d6a76683152f92@192.168.4.109:30301"
 NETWORKID="7131208"
 
 startGethNodeWithRPCBackEnd () {
   if [ ! -z "$3" ]
   then
     echo "Starting [Node $1] with RPC backend and unlock account [$3]"
-    $GETH_PATH/bin/geth --identity "Node $1" --networkid $NETWORKID --nodiscover --port $1 --rpc --rpcapi 'web3,eth,debug' --rpccorsdomain "*" --datadir $2 --bootnodes $BOOT_NODE --unlock $3 --password $4 --preload "utils.js" console
+    $GETH_PATH/bin/geth --identity "Node $1" --networkid $NETWORKID --port $1 --rpc --rpcapi 'web3,eth,debug' --rpccorsdomain "*" --datadir $2 --bootnodes $BOOT_NODE --unlock $3 --password $4 --preload "utils.js" console
   else
     echo "Starting [Node $1] with RPC backend"
-    $GETH_PATH/bin/geth --identity "Node $1" --networkid $NETWORKID --nodiscover --port $1 --rpc --rpcapi 'web3,eth,debug' --rpccorsdomain "*" --datadir $2 --bootnodes $BOOT_NODE --preload "utils.js" console
+    $GETH_PATH/bin/geth --identity "Node $1" --networkid $NETWORKID --port $1 --rpc --rpcapi 'web3,eth,debug' --rpccorsdomain "*" --datadir $2 --bootnodes $BOOT_NODE --preload "utils.js" console
   fi
 }
 
@@ -42,7 +42,7 @@ bootNode(){
   mkdir -p run
   if [ ! -e run/boot.key ]
   then
-    bootnode --genkey=run/boot.key
+    bootnode --enkey=run/boot.key
   fi
-  bootnode --nodekey=run/boot.key
+  bootnode --nodekey=run/boot.key --verbosity=9
 }

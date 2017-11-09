@@ -5,4 +5,4 @@ source base_node.sh
 NODE_ID="30303"
 DATA_DIR="run/nodes/node30303"
 
-startGethNodeWithRPCBackEnd $NODE_ID $DATA_DIR 0x98fd28df5ac0d04349aed34b099b15d595b485dc run/password
+startGethNodeWithRPCBackEnd $NODE_ID $DATA_DIR 0xc0d96e09b1fab94815c605eedfc8074091a0fa5d run/password
