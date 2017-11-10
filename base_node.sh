@@ -9,10 +9,10 @@ startGethNodeWithRPCBackEnd () {
   if [ ! -z "$3" ]
   then
     echo "Starting [Node $1] with RPC backend and unlock account [$3]"
-    $GETH_PATH/bin/geth --identity "Node $1" --networkid $NETWORKID --port $1 --rpc --rpcapi 'web3,eth,debug' --rpccorsdomain "*" --datadir $2 --bootnodes $BOOT_NODE --unlock $3 --password $4 --preload "utils.js" console
+    $GETH_PATH/bin/geth --identity "Node $1" --networkid $NETWORKID --port $1 --rpc --rpcapi 'web3,eth,personal,net,debug' --rpccorsdomain "*" --datadir $2 --bootnodes $BOOT_NODE --unlock $3 --password $4 --preload "utils.js" console
   else
     echo "Starting [Node $1] with RPC backend"
-    $GETH_PATH/bin/geth --identity "Node $1" --networkid $NETWORKID --port $1 --rpc --rpcapi 'web3,eth,debug' --rpccorsdomain "*" --datadir $2 --bootnodes $BOOT_NODE --preload "utils.js" console
+    $GETH_PATH/bin/geth --identity "Node $1" --networkid $NETWORKID --port $1 --rpc --rpcapi 'web3,eth,personal,net,debug' --rpccorsdomain "*" --datadir $2 --bootnodes $BOOT_NODE --preload "utils.js" console
   fi
 }
 
