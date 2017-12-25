@@ -19,9 +19,9 @@ Will run 3 nodes:
 * Initing
 
 `./init_node.sh run/nodes/node30303`
-`./init_node.sh run/nodes/node30303`
+`./init_node.sh run/nodes/node30304`
 
-* Creatring 303 node accout. Using `sol1234` as a pass
+* Creatring 303 node account. Using `sol1234` as a pass
 
 `./create_account.sh run/nodes/node30303`
 

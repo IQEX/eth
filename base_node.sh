@@ -2,7 +2,7 @@
 
 GENESIS="PrivateGenesis.json"
 GETH_PATH="/usr/local/"
-BOOT_NODE="enode://5a4b439c086e6259a265d75e01a1a06f941d0dc89d554d11a04598c22da6a4786278460076e688127f8dfb3a95fa782082da1fbc16cedb6b57d6a76683152f92@192.168.4.109:30301"
+BOOT_NODE="enode://65aab27bfc3563c13e1ad661ab5336557c1aa7b303bce4b2d9cd946faac8d290c82e5c75ab44dbc41453697a5904f73cdd14f391a54d26698b6b62242c7c893f@127.0.0.1:30301"
 NETWORKID="7131208"
 VERBOSITY="4"
 NETWORK="192.168.4.0/24"
@@ -44,7 +44,7 @@ bootNode(){
   mkdir -p run
   if [ ! -e run/boot.key ]
   then
-    bootnode --enkey=run/boot.key
+    bootnode --genkey=run/boot.key
   fi
   bootnode --nodekey=run/boot.key --verbosity=9
 }
